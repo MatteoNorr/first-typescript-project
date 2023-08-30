@@ -1,0 +1,14 @@
+.empty {
+  @include flex(row, center, center, 0);
+  animation: floating 1.5s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(12px);
+  }
+}

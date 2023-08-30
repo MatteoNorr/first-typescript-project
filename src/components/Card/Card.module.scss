@@ -1,0 +1,36 @@
+.Card {
+  @include flex(row, space-between, center, 0);
+  padding: 2%;
+  margin: 2%;
+  border-radius: 20px;
+  background-color: rgb(255, 121, 121);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+
+  .delete {
+    width: 20px;
+    height: 20px;
+    @include flex(row, center, center, 0);
+    background-color: rgb(221, 49, 49);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+}
+
+.undone {
+  background-color: rgb(77, 130, 222);
+  color: #fff;
+}
+
+.done {
+  background-color: rgb(84, 111, 157);
+
+  .todo {
+    text-decoration: line-through;
+  }
+
+  .delete {
+    color: #ffffff;
+  }
+}
