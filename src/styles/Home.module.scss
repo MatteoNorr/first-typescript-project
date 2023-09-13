@@ -6,3 +6,12 @@
     color: rgb(77, 130, 222);
   }
 }
+
+@keyframes wave {
+  from {
+    transform: perspective(none);
+  }
+  to {
+    transform: perspective(6.5cm);
+  }
+}

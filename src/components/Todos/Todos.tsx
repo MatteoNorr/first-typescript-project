@@ -1,8 +1,9 @@
-import { useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import Card from "../Card";
 import { todoModel } from "@/utils/fn";
 import SearchBar from "../SearchBar";
 import styles from "./Todos.module.scss";
+import { rejects } from "assert";
 
 const Todos = () => {
   const [todoList, setTodoList] = useState<todoModel[]>([]);
@@ -20,7 +21,9 @@ const Todos = () => {
         setAlert={setAlert}
       />
       {todoList.length ? (
-        todoList.map((data, i) => <Card key={i} data={data} />)
+        todoList.map((data, i) => {
+          return <Card key={i} data={data} />;
+        })
       ) : (
         <h2 className={styles.empty}>No todos yet</h2>
       )}
