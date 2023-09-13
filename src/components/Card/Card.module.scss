@@ -3,17 +3,22 @@
   padding: 2%;
   margin: 2%;
   border-radius: 20px;
-  background-color: rgb(255, 121, 121);
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.35s ease-in-out;
+  animation: pop 0.35s;
+
+  &:hover {
+    transform: scale(1.02);
+  }
 
   .delete {
     width: 20px;
     height: 20px;
-    @include flex(row, center, center, 0);
+    @include flex(column, center, center, 0);
     background-color: rgb(221, 49, 49);
     border-radius: 50%;
+    font-size: 60%;
     cursor: pointer;
   }
 }
@@ -25,6 +30,7 @@
 
 .done {
   background-color: rgb(84, 111, 157);
+  transform: scale(0.99);
 
   .todo {
     text-decoration: line-through;
@@ -32,5 +38,14 @@
 
   .delete {
     color: #ffffff;
+  }
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1);
   }
 }

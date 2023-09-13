@@ -15,7 +15,7 @@ const Card: React.FC<model> = ({ data }) => {
   const refCard = useRef<HTMLDivElement>(null);
 
   const onClickDone = () => setDone(!done);
-  const onClickRemove = () => console.log(refCard.current?.remove());
+  const onClickRemove = () => refCard.current?.remove();
 
   return (
     <div
@@ -26,7 +26,7 @@ const Card: React.FC<model> = ({ data }) => {
       <p className={styles.todo}>{data.todo}</p>
       {done && (
         <div className={styles.delete} onClick={onClickRemove}>
-          x
+          X
         </div>
       )}
     </div>
