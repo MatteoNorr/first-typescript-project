@@ -1,6 +1,19 @@
 .empty {
-  @include flex(row, center, center, 0);
+  @include flex(column, center, center, 0);
   animation: floating 1.5s ease-in-out infinite alternate-reverse;
+
+  img {
+    width: 50px;
+    height: auto;
+  }
+}
+
+.loginFor {
+  @include flex(column, center, center, 0);
+  img {
+    width: 50px;
+    height: auto;
+  }
 }
 
 @keyframes floating {
