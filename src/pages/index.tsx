@@ -1,8 +1,11 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.scss";
 import Todos from "@/components/Todos";
+import DefaultLayout from "@/components/DefaultLayout";
+import { useState } from "react";
 
 export default function Home() {
+  const [isLogged, setIsLogged] = useState<boolean>(false);
   return (
     <>
       <Head>
@@ -12,10 +15,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          <span>Q</span>uick <span>T</span>odos
-        </h1>
-        <Todos />
+        <DefaultLayout isLogged={isLogged} setIsLogged={setIsLogged}>
+          <Todos isLogged={isLogged} />
+        </DefaultLayout>
       </main>
     </>
   );

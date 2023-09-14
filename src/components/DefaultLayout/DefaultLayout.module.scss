@@ -1,0 +1,87 @@
+.Header {
+  @include flex(row, center, center, 20px);
+  min-width: 100%;
+
+  @include screenSize(0, 767px) {
+    @include flex(column, center, center, 0);
+
+    h1 {
+      margin: 5%;
+    }
+  }
+
+  .title {
+    text-align: center;
+
+    span {
+      font-size: 3rem;
+      color: rgb(77, 130, 222);
+    }
+  }
+
+  .login {
+    padding: 1%;
+    background: rgb(77, 130, 222);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+
+    @include screenSize(0, 767px) {
+      padding: 2%;
+    }
+  }
+
+  .userInfo {
+    @include flex(row, center, center, 10px);
+    padding: 1%;
+    background: rgb(77, 130, 222);
+    color: white;
+    border: none;
+    border-radius: 10px;
+
+    img {
+      border-radius: 100%;
+      width: 30px;
+      height: 30px;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    span {
+      width: auto;
+      height: auto;
+      padding: 1%;
+      background-color: white;
+      border: none;
+      border-radius: 5px;
+      color: rgb(77, 130, 222);
+      cursor: pointer;
+    }
+
+    @include screenSize(0, 767px) {
+      padding: 2%;
+    }
+  }
+
+  .logout {
+    position: absolute;
+    top: 2%;
+    padding: 1%;
+    border-radius: 20px;
+    background-color: rgb(24, 224, 44);
+    animation: popup 0.35s;
+  }
+}
+
+@keyframes popup {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}

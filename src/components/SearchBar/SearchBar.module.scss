@@ -6,11 +6,13 @@
 
   .searchContainer {
     position: relative;
-    width: 100dvw;
+    width: 500px;
     padding: 0 2%;
+    @include flex(row, center, center, 0);
 
     .search {
       width: 100%;
+      max-width: 500px;
       height: 50px;
       padding: 2% 6%;
       border: solid rgb(77, 130, 222) 2px;
